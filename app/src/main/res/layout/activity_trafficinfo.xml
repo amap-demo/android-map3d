@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="2"
-            android:hint="请输入道路名称" />
+            android:hint="请输入道路名称"
+            android:text="阜安西路"/>
 
         <Spinner
             android:id="@+id/cityName"
@@ -39,6 +40,10 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:text="交通态势信息查询" />
+        <TextView
+            android:id="@+id/traffic_info"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
     </LinearLayout>
 
     <com.amap.api.maps.MapView

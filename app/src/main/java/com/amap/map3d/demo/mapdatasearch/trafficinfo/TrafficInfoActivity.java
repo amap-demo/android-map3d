@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.amap.api.maps.AMap;
@@ -40,6 +41,7 @@ public class TrafficInfoActivity extends Activity implements View.OnClickListene
     private ProgressDialog progDialog = null;// 进度框
     private EditText searchName;// 输入公交线路名称
     private Spinner selectCity;// 选择城市下拉列表
+    private TextView traffic_Info;
     private String[] itemCitys = { "北京-110000", "上海-310000" };
     private String adCode = "";// 城市区号
     private TrafficStatusResult trafficResult;// 交通态势搜索返回的结果
@@ -63,6 +65,7 @@ public class TrafficInfoActivity extends Activity implements View.OnClickListene
             aMap = mapView.getMap();
         }
         findViewById(R.id.search).setOnClickListener(this);
+        traffic_Info = (TextView)findViewById(R.id.traffic_info);
         selectCity = (Spinner)findViewById(R.id.cityName);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, itemCitys);
@@ -71,8 +74,6 @@ public class TrafficInfoActivity extends Activity implements View.OnClickListene
         selectCity.setPrompt("请选择城市：");
         selectCity.setOnItemSelectedListener(this);
         searchName = (EditText)findViewById(R.id.roadName);
-        aMap.addMarker(new MarkerOptions().position(new LatLng(39.9508438,116.511345)));
-        aMap.addMarker(new MarkerOptions().position(new LatLng(39.9508476,116.511383)));
     }
 
     @Override
@@ -154,10 +155,12 @@ public class TrafficInfoActivity extends Activity implements View.OnClickListene
                 String s = trafficStatusInfo.getName()+trafficStatusInfo.getCoordinates()+trafficStatusInfo.getStatus();
                 Log.i("MY",s);
             }
-//            aMap.clear();
+            aMap.clear();
             TrafficOverlay overlay = new TrafficOverlay(this.getApplicationContext(),aMap,trafficResult);
             overlay.addToMap();
             overlay.zoomToSpan();
+            String info = trafficStatusResult.getDescription();
+            traffic_Info.setText(info);
         }else {
             Toast.makeText(TrafficInfoActivity.this,"没有搜到结果，错误："+errorCode,Toast.LENGTH_LONG).show();
         }

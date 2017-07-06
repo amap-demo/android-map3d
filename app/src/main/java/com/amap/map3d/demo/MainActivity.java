@@ -272,7 +272,7 @@ public final class MainActivity extends ListActivity {
 			new DemoDetails(R.string.cloud_demo, R.string.cloud_description,
 					CloudActivity.class),
 //			交通态势信息
-            new DemoDetails(R.string.cloud_demo, R.string.cloud_description,
+            new DemoDetails(R.string.traffic_demo, R.string.traffic_description,
                     TrafficInfoActivity.class),
 ////-----------------------------------------------------------------------------------------------------------------------------------------------------
 //			出行路线规划
