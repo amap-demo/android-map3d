@@ -30,7 +30,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".map.layers.BasicMapActivity"
+            android:name=".map.basemap.BasicMapActivity"
             android:label="@string/basic_map"
             android:screenOrientation="portrait" />
         <activity
@@ -113,45 +113,176 @@
             android:label="@string/uisettings_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.multipoint.MultiPointOverlayActivity"
+            android:name=".drawonmap.multipoint.MultiPointOverlayActivity"
             android:label="@string/multipoint_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.opengl.OpenglActivity"
+            android:name=".drawonmap.opengl.OpenglActivity"
             android:label="@string/opengl_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.polyline.PolylineActivity"
+            android:name=".drawonmap.polyline.PolylineActivity"
             android:label="@string/polyline_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.polygon.PolygonActivity"
+            android:name=".drawonmap.polygon.PolygonActivity"
             android:label="@string/polygon_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.polygon.CircleActivity"
+            android:name=".drawonmap.polygon.CircleActivity"
             android:label="@string/circle_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.smoothmove.SmoothMoveActivity"
+            android:name=".drawonmap.smoothmove.SmoothMoveActivity"
             android:label="@string/smooth_move_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.trace.TraceActivity"
+            android:name=".drawonmap.trace.TraceActivity"
             android:label="@string/trace_demo_simple"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.marker.CustomMarkerActivity"
+            android:name=".drawonmap.marker.CustomMarkerActivity"
             android:label="@string/custommarker_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.marker.InfoWindowActivity"
+            android:name=".drawonmap.marker.InfoWindowActivity"
             android:label="@string/infowindow_demo"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".overlay.heatmap.HeatMapActivity"
+            android:name=".drawonmap.heatmap.HeatMapActivity"
             android:label="@string/heatmap_demo"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".drawonmap.custommap.CustomMapStyleActivity"
+            android:label="@string/custom_mapstyle_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.geodata.GeocoderActivity"
+            android:label="@string/geocoder_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.geodata.ReGeocoderActivity"
+            android:label="@string/regeocoder_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.busdata.BuslineActivity"
+            android:label="@string/busline_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.busdata.BusStationActivity"
+            android:label="@string/busstation_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.district.DistrictWithBoundaryActivity"
+            android:label="@string/district_boundary_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.weatherinfo.WeatherSearchActivity"
+            android:label="@string/weather_demo"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.clouddata.CloudActivity"
+            android:label="@string/cloud_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.clouddata.CloudDetailActivity"
+            android:label="@string/cloud_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.clouddata.PreviewPhotoActivity"
+            android:label="@string/cloud_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.poidata.PoiKeywordSearchActivity"
+            android:label="@string/poikeywordsearch_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.poidata.PoiAroundSearchActivity"
+            android:label="@string/poiaroundsearch_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.poidata.PoiIDSearchActivity"
+            android:label="@string/poiidsearch_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.poidata.RoutePOIActivity"
+            android:label="@string/routepoisearch_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.poidata.InputtipsActivity"
+            android:label="@string/inputtips_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".mapdatasearch.trafficinfo.TrafficInfoActivity"
+            android:label="@string/traffic_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.RouteActivity"
+            android:label="@string/route_drive"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.driving.DriveRouteActivity"
+            android:label="@string/route_drive"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.driving.DriveRouteDetailActivity"
+            android:label="@string/route_drive"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.bus.BusRouteActivity"
+            android:label="@string/route_drive"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.bus.BusRouteDetailActivity"
+            android:label="@string/route_bus"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".routesearch.ride.RideRouteActivity"
+            android:label="@string/route_ride"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.ride.RideRouteDetailActivity"
+            android:label="@string/route_ride"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.walk.WalkRouteActivity"
+            android:label="@string/route_walk"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".routesearch.walk.WalkRouteDetailActivity"
+            android:label="@string/route_walk"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".maptool.coordinate.CoordConverActivity"
+            android:label="@string/coordconvert_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".maptool.calculate.CalculateDistanceActivity"
+            android:label="@string/calculate_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

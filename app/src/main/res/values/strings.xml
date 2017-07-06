@@ -98,7 +98,7 @@
     <string name="properties_polyline">设置Polyline属性</string>
     <string name="properties_polygon">设置Polygon属性</string>
     <string name="properties_circle">设置Circle属性</string>
-    <string name="busline_demo">Busline公交查询</string>
+    <string name="busline_demo">公交路线查询</string>
     <string name="busline_description">介绍如何在地图中绘制BusLine</string>
     <string name="route_demo">Route路径规划</string>
     <string name="route_description">介绍如何在地图中绘制Route</string>
@@ -126,7 +126,7 @@
     <string name="opengl_description">介绍地图中开放Opengl接口功能</string>
     <string name="uisettings_demo">控件交互</string>
     <string name="uisettings_description">介绍地图中UI Settings功能</string>
-    <string name="geocoder_demo">地理编码 功能</string>
+    <string name="geocoder_demo">地理编码功能</string>
     <string name="geocoder_description">介绍 geocoder地理编码 功能</string>
     <string name="poikeywordsearch_demo">poi关键字搜索</string>
     <string name="poikeywordsearch_description">介绍poi关键字搜索功能</string>
@@ -136,7 +136,7 @@
     <string name="offlinemap_description">介绍如何使用离线地图</string>
     <string name="district_demo">行政区划查询</string>
     <string name="district_description">政区划查询功能演示</string>
-    <string name="district_boundary_demo">行政区划边界查询</string>
+    <string name="district_boundary_demo">获取行政区划数据</string>
     <string name="district_boundary_description">政区划查询功能返回边界演示</string>
     <string name="search_title">搜索关键字</string>
     <string name="up_arrow">\u2191</string>
@@ -178,7 +178,7 @@
     <string name="sso_complete">完成</string>
     <string name="share_demo">短串分享</string>
     <string name="share_description">短串分享功能演示</string>
-    <string name="weather_demo">天气查询</string>
+    <string name="weather_demo">获取天气数据</string>
     <string name="weather_description">天气预报功能</string>
     <string name="subpoi_demo">POI父子关系</string>
     <string name="subpoi_description">介绍POI的父子关系功能</string>
@@ -230,7 +230,7 @@
     <string name="tileoverlay_demo">TileOverlay绘制</string>
     <string name="coordconvert_demo">坐标系转换</string>
     <string name="contains_demo">点是否在多边形内</string>
-    <string name="calculateLineDistance">两点间距离</string>
+    <string name="calculate_demo">距离/面积计算</string>
     <string name="convertgeo2point_demo">经纬度转屏幕像素</string>
     <string name="routepoisearch_demo">沿途搜索</string>
 
@@ -260,5 +260,9 @@
     <!-- 自定义样式 -->
     <string name="style_custom_on">开启个性化地图</string>
     <string name="style_custom_off">关闭个性化地图</string>
+    <string name="custom_mapstyle_demo">自定义地图</string>
+    <string name="custom_mapstyle_description">自定义地图功能</string>
 
+    <string name="traffic_demo">交通态势检索</string>
+    <string name="traffic_description">介绍交通态势检索功能</string>
 </resources>

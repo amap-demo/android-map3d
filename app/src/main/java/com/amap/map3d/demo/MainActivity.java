@@ -17,7 +17,6 @@ import com.amap.map3d.demo.map.layers.LayersActivity;
 import com.amap.map3d.demo.map.indoor.IndoorMapActivity;
 import com.amap.map3d.demo.map.location.CustomLocationActivity;
 import com.amap.map3d.demo.map.location.LocationModeSourceActivity;
-import com.amap.map3d.demo.map.layers.BasicMapActivity;
 import com.amap.map3d.demo.map.basemap.MapImpMethodActivity;
 import com.amap.map3d.demo.map.offlinemap.OfflineMapActivity;
 import com.amap.map3d.demo.interact.gesture.GestureSettingsActivity;
@@ -29,15 +28,36 @@ import com.amap.map3d.demo.interact.mapcamera.ZoomActivity;
 import com.amap.map3d.demo.interact.screenshot.ScreenShotActivity;
 import com.amap.map3d.demo.interact.widget.LogoSettingsActivity;
 import com.amap.map3d.demo.interact.widget.UiSettingsActivity;
-import com.amap.map3d.demo.overlay.heatmap.HeatMapActivity;
-import com.amap.map3d.demo.overlay.marker.CustomMarkerActivity;
-import com.amap.map3d.demo.overlay.multipoint.MultiPointOverlayActivity;
-import com.amap.map3d.demo.overlay.polygon.CircleActivity;
-import com.amap.map3d.demo.overlay.polygon.PolygonActivity;
-import com.amap.map3d.demo.overlay.polyline.PolylineActivity;
-import com.amap.map3d.demo.overlay.opengl.OpenglActivity;
-import com.amap.map3d.demo.overlay.smoothmove.SmoothMoveActivity;
-import com.amap.map3d.demo.overlay.trace.TraceActivity;
+import com.amap.map3d.demo.mapdatasearch.busdata.BusStationActivity;
+import com.amap.map3d.demo.mapdatasearch.busdata.BuslineActivity;
+import com.amap.map3d.demo.mapdatasearch.clouddata.CloudActivity;
+import com.amap.map3d.demo.mapdatasearch.district.DistrictWithBoundaryActivity;
+import com.amap.map3d.demo.mapdatasearch.geodata.GeocoderActivity;
+import com.amap.map3d.demo.mapdatasearch.geodata.ReGeocoderActivity;
+import com.amap.map3d.demo.drawonmap.custommap.CustomMapStyleActivity;
+import com.amap.map3d.demo.drawonmap.heatmap.HeatMapActivity;
+import com.amap.map3d.demo.drawonmap.marker.CustomMarkerActivity;
+import com.amap.map3d.demo.drawonmap.multipoint.MultiPointOverlayActivity;
+import com.amap.map3d.demo.drawonmap.polygon.CircleActivity;
+import com.amap.map3d.demo.drawonmap.polygon.PolygonActivity;
+import com.amap.map3d.demo.drawonmap.polyline.PolylineActivity;
+import com.amap.map3d.demo.drawonmap.opengl.OpenglActivity;
+import com.amap.map3d.demo.drawonmap.smoothmove.SmoothMoveActivity;
+import com.amap.map3d.demo.drawonmap.trace.TraceActivity;
+import com.amap.map3d.demo.mapdatasearch.poidata.InputtipsActivity;
+import com.amap.map3d.demo.mapdatasearch.poidata.PoiAroundSearchActivity;
+import com.amap.map3d.demo.mapdatasearch.poidata.PoiIDSearchActivity;
+import com.amap.map3d.demo.mapdatasearch.poidata.PoiKeywordSearchActivity;
+import com.amap.map3d.demo.mapdatasearch.poidata.RoutePOIActivity;
+import com.amap.map3d.demo.mapdatasearch.trafficinfo.TrafficInfoActivity;
+import com.amap.map3d.demo.mapdatasearch.weatherinfo.WeatherSearchActivity;
+import com.amap.map3d.demo.maptool.calculate.CalculateDistanceActivity;
+import com.amap.map3d.demo.maptool.coordinate.CoordConverActivity;
+import com.amap.map3d.demo.routesearch.RouteActivity;
+import com.amap.map3d.demo.routesearch.bus.BusRouteActivity;
+import com.amap.map3d.demo.routesearch.driving.DriveRouteActivity;
+import com.amap.map3d.demo.routesearch.ride.RideRouteActivity;
+import com.amap.map3d.demo.routesearch.walk.WalkRouteActivity;
 import com.amap.map3d.demo.view.FeatureView;
 
 
@@ -195,95 +215,101 @@ public final class MainActivity extends ListActivity {
 //			//绘制tileOverlay
 //			new DemoDetails(R.string.tileoverlay_demo, R.string.tileoverlay_demo,
 //					TileOverlayActivity.class),
+			new DemoDetails(R.string.custom_mapstyle_demo, R.string.custom_mapstyle_description,
+					CustomMapStyleActivity.class),
 			new DemoDetails(R.string.multipoint_demo, R.string.multipoint_description,
 					MultiPointOverlayActivity.class),
 ////-----------------------------------------------------------------------------------------------------------------------------------------------------
-//			//获取地图数据
-//			new DemoDetails(R.string.search_data, R.string.blank, null),
-//			//关键字检索
-//			new DemoDetails(R.string.poikeywordsearch_demo,
-//					R.string.poikeywordsearch_description,
-//					PoiKeywordSearchActivity.class),
-//			//周边搜索
-//			new DemoDetails(R.string.poiaroundsearch_demo,
-//					R.string.poiaroundsearch_description,
-//					PoiAroundSearchActivity.class),
-////			ID检索
-//			new DemoDetails(R.string.poiidsearch_demo,
-//					R.string.poiidsearch_demo,
-//					PoiIDSearchActivity.class),
-//			//沿途搜索
-//			new DemoDetails(R.string.routepoisearch_demo,
-//					R.string.routepoisearch_demo,
-//					RoutePOIActivity.class),
-////			输入提示查询
-//			new DemoDetails(R.string.inputtips_demo, R.string.inputtips_description,
-//					InputtipsActivity.class),
+			//获取地图数据
+			new DemoDetails(R.string.search_data, R.string.blank, null),
+			//关键字检索
+			new DemoDetails(R.string.poikeywordsearch_demo,
+					R.string.poikeywordsearch_description,
+					PoiKeywordSearchActivity.class),
+			//周边搜索
+			new DemoDetails(R.string.poiaroundsearch_demo,
+					R.string.poiaroundsearch_description,
+					PoiAroundSearchActivity.class),
+//			ID检索
+			new DemoDetails(R.string.poiidsearch_demo,
+					R.string.poiidsearch_demo,
+					PoiIDSearchActivity.class),
+			//沿途搜索
+			new DemoDetails(R.string.routepoisearch_demo,
+					R.string.routepoisearch_demo,
+					RoutePOIActivity.class),
+//			输入提示查询
+			new DemoDetails(R.string.inputtips_demo, R.string.inputtips_description,
+					InputtipsActivity.class),
 ////			POI父子关系
 //			new DemoDetails(R.string.subpoi_demo, R.string.subpoi_description,
 //					SubPoiSearchActivity.class),
-////			天气查询
-//			new DemoDetails(R.string.weather_demo,
-//					R.string.weather_description, WeatherSearchActivity.class),
-////			地理编码
-//			new DemoDetails(R.string.geocoder_demo,
-//					R.string.geocoder_description, GeocoderActivity.class),
-////			逆地理编码
-//			new DemoDetails(R.string.regeocoder_demo,
-//					R.string.regeocoder_description, ReGeocoderActivity.class),
+
+//			地理编码
+			new DemoDetails(R.string.geocoder_demo,
+					R.string.geocoder_description, GeocoderActivity.class),
+//			逆地理编码
+			new DemoDetails(R.string.regeocoder_demo,
+					R.string.regeocoder_description, ReGeocoderActivity.class),
+//			公交路线查询
+			new DemoDetails(R.string.busline_demo,
+					R.string.busline_description, BuslineActivity.class),
+//			公交站点查询
+			new DemoDetails(R.string.busstation_demo,
+					R.string.blank, BusStationActivity.class),
 ////			行政区划查询
 //			new DemoDetails(R.string.district_demo,
 //					R.string.district_description, DistrictActivity.class),
-////			行政区边界查询
-//			new DemoDetails(R.string.district_boundary_demo,
-//					R.string.district_boundary_description,
-//					DistrictWithBoundaryActivity.class),
-////			公交路线查询
-//			new DemoDetails(R.string.busline_demo,
-//					R.string.busline_description, BuslineActivity.class),
-////			公交站点查询
-//			new DemoDetails(R.string.busstation_demo,
-//					R.string.blank, BusStationActivity.class),
-////			云图
-//			new DemoDetails(R.string.cloud_demo, R.string.cloud_description,
-//					CloudActivity.class),
-////			出行路线规划
-//			new DemoDetails(R.string.search_route, R.string.blank, null),
-////			驾车出行路线规划
-//			new DemoDetails(R.string.route_drive, R.string.blank, DriveRouteActivity.class),
-////			步行出行路线规划
-//			new DemoDetails(R.string.route_walk, R.string.blank, WalkRouteActivity.class),
-////			公交出行路线规划
-//			new DemoDetails(R.string.route_bus, R.string.blank, BusRouteActivity.class),
-////			骑行出行路线规划
-//			new DemoDetails(R.string.route_ride, R.string.blank, RideRouteActivity.class),
-////			route综合demo
-//			new DemoDetails(R.string.route_demo, R.string.route_description,
-//					RouteActivity.class),
+//			行政区边界查询
+			new DemoDetails(R.string.district_boundary_demo,
+					R.string.district_boundary_description,
+					DistrictWithBoundaryActivity.class),
+//			天气查询
+			new DemoDetails(R.string.weather_demo,
+					R.string.weather_description, WeatherSearchActivity.class),
+
+//			云图
+			new DemoDetails(R.string.cloud_demo, R.string.cloud_description,
+					CloudActivity.class),
+//			交通态势信息
+            new DemoDetails(R.string.cloud_demo, R.string.cloud_description,
+                    TrafficInfoActivity.class),
+////-----------------------------------------------------------------------------------------------------------------------------------------------------
+//			出行路线规划
+			new DemoDetails(R.string.search_route, R.string.blank, null),
+//			驾车出行路线规划
+			new DemoDetails(R.string.route_drive, R.string.blank, DriveRouteActivity.class),
+//			步行出行路线规划
+			new DemoDetails(R.string.route_walk, R.string.blank, WalkRouteActivity.class),
+//			公交出行路线规划
+			new DemoDetails(R.string.route_bus, R.string.blank, BusRouteActivity.class),
+//			骑行出行路线规划
+			new DemoDetails(R.string.route_ride, R.string.blank, RideRouteActivity.class),
+//			route综合demo
+			new DemoDetails(R.string.route_demo, R.string.route_description,
+					RouteActivity.class),
+////-----------------------------------------------------------------------------------------------------------------------------------------------------
 ////			短串分享
 //			new DemoDetails(R.string.search_share, R.string.blank, null),
 //			new DemoDetails(R.string.share_demo, R.string.share_description,
 //					ShareActivity.class),
 //
 //
+//////-----------------------------------------------------------------------------------------------------------------------------------------------------
+//			地图计算工具
+			new DemoDetails(R.string.map_tools, R.string.blank, null),
 //
-////			地图计算工具
-//			new DemoDetails(R.string.map_tools, R.string.blank, null),
-//
-////			其他坐标系转换为高德坐标系
-//			new DemoDetails(R.string.coordconvert_demo, R.string.coordconvert_demo, CoordConverActivity.class),
+//			其他坐标系转换为高德坐标系
+			new DemoDetails(R.string.coordconvert_demo, R.string.coordconvert_demo, CoordConverActivity.class),
+//			两点间距离计算
+			new DemoDetails(R.string.calculate_demo, R.string.calculate_demo, CalculateDistanceActivity.class),
 ////			地理坐标和屏幕像素坐标转换
 //			new DemoDetails(R.string.convertgeo2point_demo, R.string.convertgeo2point_demo, GeoToScreenActivity.class),
-////			两点间距离计算
-//			new DemoDetails(R.string.calculateLineDistance, R.string.calculateLineDistance, CalculateDistanceActivity.class),
 ////			判断点是否在多边形内
 //			new DemoDetails(R.string.contains_demo, R.string.contains_demo, ContainsActivity.class),
-//
-//
-////			地图计算工具
-//			new DemoDetails(R.string.map_expand, R.string.blank, null),
+
+
 ////			轨迹纠偏
-//			new DemoDetails(R.string.trace_demo, R.string.trace_description, TraceActivity.class),
 //			new DemoDetails(R.string.trace_demo_simple, R.string.trace_description_simple, TraceActivity_Simple.class),
 
 //

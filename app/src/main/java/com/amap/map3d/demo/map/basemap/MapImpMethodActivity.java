@@ -8,7 +8,6 @@ import android.view.View;
 import com.amap.api.maps.AMap;
 import com.amap.api.maps.MapView;
 import com.amap.map3d.demo.R;
-import com.amap.map3d.demo.map.layers.BasicMapActivity;
 
 /**
  * 地图的六种实现方式：MapView、MapFragment、SupportMapFragment、TextureMapView、TextureMapFragment、TextureSupportMapFragment
