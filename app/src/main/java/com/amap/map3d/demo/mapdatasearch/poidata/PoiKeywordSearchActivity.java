@@ -56,7 +56,7 @@ public class PoiKeywordSearchActivity extends FragmentActivity implements
 	private ProgressDialog progDialog = null;// 搜索时进度条
 	private EditText editCity;// 要输入的城市名字或者城市区号
 	private PoiResult poiResult; // poi返回的结果
-	private int currentPage = 0;// 当前页面，从0开始计数
+	private int currentPage = 1;
 	private PoiSearch.Query query;// Poi查询条件类
 	private PoiSearch poiSearch;// POI搜索
 
@@ -149,7 +149,7 @@ public class PoiKeywordSearchActivity extends FragmentActivity implements
 	 */
 	protected void doSearchQuery() {
 		showProgressDialog();// 显示进度框
-		currentPage = 0;
+		currentPage = 1;
 		query = new PoiSearch.Query(keyWord, "", editCity.getText().toString());// 第一个参数表示搜索字符串，第二个参数表示poi搜索类型，第三个参数表示poi搜索区域（空字符串代表全国）
 		query.setPageSize(10);// 设置每页最多返回多少条poiitem
 		query.setPageNum(currentPage);// 设置查第一页

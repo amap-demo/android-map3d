@@ -167,10 +167,12 @@
         <activity
             android:name=".mapdatasearch.busdata.BuslineActivity"
             android:label="@string/busline_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait" />
         <activity
             android:name=".mapdatasearch.busdata.BusStationActivity"
             android:label="@string/busstation_demo"
+            android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait" />
         <activity
             android:name=".mapdatasearch.district.DistrictWithBoundaryActivity"

@@ -42,13 +42,13 @@ import java.util.List;
  * 介绍poi周边搜索功能
  */
 public class PoiAroundSearchActivity extends Activity implements OnClickListener,
-        OnMapClickListener, OnInfoWindowClickListener, InfoWindowAdapter, OnMarkerClickListener,
+        OnMapClickListener, OnInfoWindowClickListener, OnMarkerClickListener,
         OnPoiSearchListener {
 	private MapView mapview;
 	private AMap mAMap;
 
 	private PoiResult poiResult; // poi返回的结果
-	private int currentPage = 0;// 当前页面，从0开始计数
+	private int currentPage = 1;// 当前页面
 	private PoiSearch.Query query;// Poi查询条件类
 	private LatLonPoint lp = new LatLonPoint(39.993743, 116.472995);// 116.472995,39.993743
 	private Marker locationMarker; // 选择的点
@@ -82,7 +82,6 @@ public class PoiAroundSearchActivity extends Activity implements OnClickListener
 			mAMap.setOnMapClickListener(this);
 			mAMap.setOnMarkerClickListener(this);
 			mAMap.setOnInfoWindowClickListener(this);
-			mAMap.setInfoWindowAdapter(this);
 			TextView searchButton = (TextView) findViewById(R.id.btn_search);
 			searchButton.setOnClickListener(this);
 			locationMarker = mAMap.addMarker(new MarkerOptions()
@@ -121,7 +120,7 @@ public class PoiAroundSearchActivity extends Activity implements OnClickListener
 	 */
 	protected void doSearchQuery() {
 		keyWord = mSearchText.getText().toString().trim();
-		currentPage = 0;
+		currentPage = 1;
 		query = new PoiSearch.Query(keyWord, "", "");// 第一个参数表示搜索字符串，第二个参数表示poi搜索类型，第三个参数表示poi搜索区域（空字符串代表全国）
 		query.setPageSize(20);// 设置每页最多返回多少条poiitem
 		query.setPageNum(currentPage);// 设置查第一页
@@ -290,21 +289,6 @@ public class PoiAroundSearchActivity extends Activity implements OnClickListener
 		mPoiName.setText(mCurrentPoi.getTitle());
 		mPoiAddress.setText(mCurrentPoi.getSnippet()+mCurrentPoi.getDistance());
 	}
-
-
-	@Override
-	public View getInfoContents(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-
-	@Override
-	public View getInfoWindow(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 
 	@Override
 	public void onInfoWindowClick(Marker arg0) {

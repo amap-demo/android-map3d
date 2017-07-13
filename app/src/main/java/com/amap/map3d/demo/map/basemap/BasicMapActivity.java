@@ -1,8 +1,11 @@
-package com.amap.map3d.demo.drawonmap.custommap;
+package com.amap.map3d.demo.map.basemap;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 
@@ -17,17 +20,23 @@ import java.io.InputStream;
 
 
 /**
- * AMap地图中介绍如何显示一个自定义地图
+ * AMapV2地图中介绍如何显示一个基本地图
  */
-public class CustomMapStyleActivity extends Activity {
-		private MapView mapView;
-		private AMap aMap;
+public class BasicMapActivity extends Activity implements OnClickListener {
+	private MapView mapView;
+	private AMap aMap;
+	private Button basicmap;
+	private Button rsmap;
+	private Button nightmap;
+	private Button navimap;
+
 	private CheckBox mStyleCheckbox;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.custommap_activity);
+		setContentView(R.layout.basicmap_activity);
 	    /*
          * 设置离线地图存储目录，在下载离线地图或初始化地图设置;
          * 使用过程中可自行设置, 若自行设置了离线地图存储的路径，
@@ -51,6 +60,15 @@ public class CustomMapStyleActivity extends Activity {
 			aMap = mapView.getMap();
 		}
 		setMapCustomStyleFile(this);
+		basicmap = (Button)findViewById(R.id.basicmap);
+		basicmap.setOnClickListener(this);
+		rsmap = (Button)findViewById(R.id.rsmap);
+		rsmap.setOnClickListener(this);
+		nightmap = (Button)findViewById(R.id.nightmap);
+		nightmap.setOnClickListener(this);
+		navimap = (Button)findViewById(R.id.navimap);
+		navimap.setOnClickListener(this);
+
 		mStyleCheckbox = (CheckBox) findViewById(R.id.check_style);
 
 		mStyleCheckbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -136,6 +154,27 @@ public class CustomMapStyleActivity extends Activity {
 	protected void onDestroy() {
 		super.onDestroy();
 		mapView.onDestroy();
+	}
+
+	@Override
+	public void onClick(View v) {
+		switch (v.getId()) {
+			case R.id.basicmap:
+				aMap.setMapType(AMap.MAP_TYPE_NORMAL);// 矢量地图模式
+				break;
+			case R.id.rsmap:
+				aMap.setMapType(AMap.MAP_TYPE_SATELLITE);// 卫星地图模式
+				break;
+			case R.id.nightmap:
+				aMap.setMapType(AMap.MAP_TYPE_NIGHT);//夜景地图模式
+				break;
+			case R.id.navimap:
+				aMap.setMapType(AMap.MAP_TYPE_NAVI);//导航地图模式
+				break;
+		}
+
+		mStyleCheckbox.setChecked(false);
+
 	}
 
 }

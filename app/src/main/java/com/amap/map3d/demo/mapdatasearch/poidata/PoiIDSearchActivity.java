@@ -69,7 +69,6 @@ public class PoiIDSearchActivity extends Activity implements OnClickListener,OnM
 		mSearchText = (EditText)findViewById(R.id.input_edittext);
 		mSearchText.setText("B0FFFZ7A7D");
 		mSearchText.setHint("请输入搜索ID");
-		detailMarker = mAMap.addMarker(new MarkerOptions());
 //		mPoiDetail.setOnClickListener(this);;
 	}
 
@@ -126,7 +125,7 @@ public class PoiIDSearchActivity extends Activity implements OnClickListener,OnM
 		if (rCode == AMapException.CODE_AMAP_SUCCESS) {
 			if (item != null) {
 				mPoi = item;
-				detailMarker.setPosition(AMapUtil.convertToLatLng(mPoi.getLatLonPoint()));
+				detailMarker = mAMap.addMarker(new MarkerOptions().position(AMapUtil.convertToLatLng(mPoi.getLatLonPoint())));
 				setPoiItemDisplayContent(mPoi);
 				whetherToShowDetailInfo(true);
 			}

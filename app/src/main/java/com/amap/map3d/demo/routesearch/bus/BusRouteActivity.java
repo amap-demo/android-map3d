@@ -36,7 +36,7 @@ import com.amap.map3d.demo.util.ToastUtil;
  * 公交出行路线规划 实现
  */
 public class BusRouteActivity extends Activity implements OnMapClickListener,
-        OnMarkerClickListener, OnInfoWindowClickListener, InfoWindowAdapter, OnRouteSearchListener {
+        OnMarkerClickListener, OnInfoWindowClickListener, OnRouteSearchListener {
 	private AMap aMap;
 	private MapView mapView;
 	private Context mContext;
@@ -99,20 +99,7 @@ public class BusRouteActivity extends Activity implements OnMapClickListener,
 		aMap.setOnMapClickListener(BusRouteActivity.this);
 		aMap.setOnMarkerClickListener(BusRouteActivity.this);
 		aMap.setOnInfoWindowClickListener(BusRouteActivity.this);
-		aMap.setInfoWindowAdapter(BusRouteActivity.this);
-		
-	}
 
-	@Override
-	public View getInfoContents(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public View getInfoWindow(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

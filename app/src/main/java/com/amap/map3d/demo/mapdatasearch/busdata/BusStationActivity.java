@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BusStationActivity extends Activity implements
-		OnMarkerClickListener, InfoWindowAdapter, OnItemSelectedListener,
+		OnMarkerClickListener, OnItemSelectedListener,
 		OnBusStationSearchListener, OnClickListener {
 	private AMap aMap;
 	private MapView mapView;
@@ -83,7 +83,6 @@ public class BusStationActivity extends Activity implements
 	 */
 	private void setUpMap() {
 		aMap.setOnMarkerClickListener(this);
-		aMap.setInfoWindowAdapter(this);
 	}
 
 	/**
@@ -161,22 +160,6 @@ public class BusStationActivity extends Activity implements
 		if (progDialog != null) {
 			progDialog.dismiss();
 		}
-	}
-
-	/**
-	 * 提供一个给默认信息窗口定制内容的方法
-	 */
-	@Override
-	public View getInfoContents(Marker marker) {
-		return null;
-	}
-
-	/**
-	 * 提供一个个性化定制信息窗口的方法
-	 */
-	@Override
-	public View getInfoWindow(Marker marker) {
-		return null;
 	}
 
 	/**

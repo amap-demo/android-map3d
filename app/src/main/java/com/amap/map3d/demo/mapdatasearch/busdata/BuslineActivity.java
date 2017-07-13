@@ -37,7 +37,7 @@ import java.util.List;
  * AMapV2地图中简单介绍公交线路搜索
  */
 public class BuslineActivity extends Activity implements OnMarkerClickListener,
-		InfoWindowAdapter, OnItemSelectedListener, OnBusLineSearchListener,
+		OnItemSelectedListener, OnBusLineSearchListener,
 		OnClickListener {
 	private AMap aMap;
 	private MapView mapView;
@@ -94,7 +94,6 @@ public class BuslineActivity extends Activity implements OnMarkerClickListener,
 	 */
 	private void setUpMap() {
 		aMap.setOnMarkerClickListener(this);
-		aMap.setInfoWindowAdapter(this);
 	}
 
 	/**
@@ -181,22 +180,6 @@ public class BuslineActivity extends Activity implements OnMarkerClickListener,
 		if (progDialog != null) {
 			progDialog.dismiss();
 		}
-	}
-
-	/**
-	 * 提供一个给默认信息窗口定制内容的方法
-	 */
-	@Override
-	public View getInfoContents(Marker marker) {
-		return null;
-	}
-
-	/**
-	 * 提供一个个性化定制信息窗口的方法
-	 */
-	@Override
-	public View getInfoWindow(Marker marker) {
-		return null;
 	}
 
 	/**

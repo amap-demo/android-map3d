@@ -39,7 +39,7 @@ import com.amap.map3d.demo.util.ToastUtil;
  * 骑行路径规划功能的实现
  */
 public class RideRouteActivity extends Activity implements OnMapClickListener,
-        OnMarkerClickListener, OnInfoWindowClickListener, InfoWindowAdapter, OnRouteSearchListener {
+        OnMarkerClickListener, OnInfoWindowClickListener, OnRouteSearchListener {
 	private AMap aMap;
 	private MapView mapView;
 	private Context mContext;
@@ -99,20 +99,6 @@ public class RideRouteActivity extends Activity implements OnMapClickListener,
 		aMap.setOnMapClickListener(RideRouteActivity.this);
 		aMap.setOnMarkerClickListener(RideRouteActivity.this);
 		aMap.setOnInfoWindowClickListener(RideRouteActivity.this);
-		aMap.setInfoWindowAdapter(RideRouteActivity.this);
-		
-	}
-
-	@Override
-	public View getInfoContents(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public View getInfoWindow(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override

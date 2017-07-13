@@ -50,7 +50,7 @@ import com.amap.map3d.demo.util.ToastUtil;
  * Route路径规划: 驾车规划、公交规划、步行规划
  */
 public class RouteActivity extends Activity implements OnMapClickListener,
-        OnMarkerClickListener, OnInfoWindowClickListener, InfoWindowAdapter, OnRouteSearchListener {
+        OnMarkerClickListener, OnInfoWindowClickListener, OnRouteSearchListener {
 	private AMap aMap;
 	private MapView mapView;
 	private Context mContext;
@@ -127,20 +127,7 @@ public class RouteActivity extends Activity implements OnMapClickListener,
 		aMap.setOnMapClickListener(RouteActivity.this);
 		aMap.setOnMarkerClickListener(RouteActivity.this);
 		aMap.setOnInfoWindowClickListener(RouteActivity.this);
-		aMap.setInfoWindowAdapter(RouteActivity.this);
-		
-	}
 
-	@Override
-	public View getInfoContents(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public View getInfoWindow(Marker arg0) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@Override
