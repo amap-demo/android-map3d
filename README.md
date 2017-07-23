@@ -5,6 +5,8 @@ Android 3D地图SDK demo
 - [高德官网申请Key](http://lbs.amap.com/dev/#/).
 - [开发指南](http://lbs.amap.com/api/android-sdk/summary/).
 - 阅读[参考手册](http://a.amap.com/lbs/static/unzip/Android_Map_Doc/index.html).
+- 工程基于3D地图SDK实现
+
 
 ## 说明 ##
 
